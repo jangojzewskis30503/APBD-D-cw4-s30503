@@ -22,7 +22,7 @@ public class EmpDeptSalgradeTests
     {
         var emps = Database.GetEmps();
 
-        List<Emp> result = emps.Where(e => e.Job == "DEPT30").OrderByDescending(s => s.Sal).ToList();
+        List<Emp> result = emps.Where(e => e.DeptNo == 30).OrderByDescending(s => s.Sal).ToList();
 
         Assert.Equal(2, result.Count);
         Assert.True(result[0].Sal >= result[1].Sal);
